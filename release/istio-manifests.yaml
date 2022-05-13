@@ -27,7 +27,7 @@ spec:
     istio: ingressgateway # use Istio default gateway implementation
   servers:
   - port:
-      number: 80
+      number: 80 # Lets in all ingress traffic into mesh on port 80
       name: http
       protocol: HTTP
     hosts:
@@ -41,7 +41,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - frontend-gateway
+  - frontend-gateway # bind Gateway to virtual service
   http:
   - route:
     - destination:
