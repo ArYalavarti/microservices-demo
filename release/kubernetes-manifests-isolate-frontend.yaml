@@ -252,6 +252,7 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
+      nodeName: observatory-k8-1
       serviceAccountName: default
       securityContext:
         fsGroup: 1000
@@ -496,13 +497,6 @@ spec:
       labels:
         app: cartservice
     spec:
-      topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            app: cartservice
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       securityContext:
