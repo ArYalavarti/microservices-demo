@@ -156,7 +156,6 @@ spec:
       labels:
         app: recommendationservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
@@ -219,7 +218,6 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       containers:
         - name: server
@@ -374,7 +372,6 @@ spec:
       labels:
         app: productcatalogservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
@@ -487,7 +484,6 @@ spec:
       labels:
         app: currencyservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:

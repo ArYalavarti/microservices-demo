@@ -1,3 +1,4 @@
+
 # Copyright 2018 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -156,7 +157,6 @@ spec:
       labels:
         app: recommendationservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
@@ -219,7 +219,6 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       containers:
         - name: server
@@ -374,7 +373,6 @@ spec:
       labels:
         app: productcatalogservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
@@ -433,7 +431,6 @@ spec:
       labels:
         app: cartservice
     spec:
-      nodeName: observatory-k8-1
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
