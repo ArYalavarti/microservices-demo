@@ -178,6 +178,13 @@ spec:
       labels:
         app: recommendationservice
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app: recommendationservice
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       securityContext:
@@ -255,7 +262,7 @@ spec:
       topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
+        whenUnsatisfiable: ScheduleAnyway
         labelSelector:
           matchLabels:
             app: frontend
@@ -506,7 +513,7 @@ spec:
       topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
+        whenUnsatisfiable: ScheduleAnyway
         labelSelector:
           matchLabels:
             app: cartservice
@@ -575,6 +582,13 @@ spec:
       labels:
         app: currencyservice
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app: currencyservice
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       securityContext:
